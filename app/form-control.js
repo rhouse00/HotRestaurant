@@ -16,9 +16,12 @@ $("#submit").on("click", function reserveTable(event){
 		$("#phone").trigger("reset");
 		return false;
 	}else {
-		console.log(name, phone, email, id);
-		tableQueue.push(new Table(name, phone, email, id));
-			console.log(tableQueue);
+		
+		// tableQueue.push(new Table(name, phone, email, id));
+		$.post("/app/waiting", 
+			new Table(name, phone, email, id),
+			
+			)
 	}
 });
 

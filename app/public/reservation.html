@@ -61,6 +61,40 @@
 	</div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="../form-control.js"></script>
+        <script>
+        	$("#submit").on("click", function reserveTable(event){
+        		
+        		function Table(name, phone, email, id) {
+					this.name = name;
+					this.phone = phone;
+					this.email = email;
+					this.id = id;
+				}
+
+				event.preventDefault();
+
+				var name = $("#name").val().trim();
+				var phone = $("#phone").val().trim();
+				var email = $("#email").val().trim();
+				var id = $("#id").val().trim();
+				
+				if (name.length < 3 || isNaN(name) === false){
+					alert("Please enter valid name");
+					$("#name").trigger("reset");
+					return false;
+				}if (phone.length > 10 || isNaN(phone)){
+					alert("Please enter valid phone number");
+					$("#phone").trigger("reset");
+					return false;
+				}else {
+		        	$.post("http://localhost:3000/api/waiting", new Table(name, phone, email, id))
+				      .done(function(data) {
+				        console.log(data);
+				        alert("Adding character...");
+				    });
+				}
+
+			});
+        </script>
     </body>
 </html>

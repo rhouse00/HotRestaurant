@@ -1,5 +1,6 @@
 const path = require("path");
 
+var tableQueue = [];
 
 module.exports = (app)=>{
 
@@ -13,6 +14,11 @@ module.exports = (app)=>{
     
        app.get("/api/clear", (req, res)=>{
         res.send("clearing!");
+    });
+    app.post("/api/waiting", (req, res)=>{
+        var newTable = req.body;
+		tableQueue.push(newTable);
+		res.json(newTable);
     });
 
 };
