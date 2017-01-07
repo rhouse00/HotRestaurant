@@ -10,5 +10,9 @@ module.exports = (app)=>{
     app.get("/api/current", (req, res)=>{
         res.send("current!");
     });
+    
+       app.get("/api/clear", (req, res)=>{
+        res.send("clearing!");
+    });
 
 };
