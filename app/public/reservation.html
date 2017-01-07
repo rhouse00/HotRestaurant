@@ -1,39 +1,66 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Hot Restaurant</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hot Restaurant</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    </head>
 	<body>
 		
+	<div class="container">
+		<div class="jumbotron">
+            <h1 style="text-align: center"><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
+            <hr>
+            <h2 style="text-align: center">We only have <span id="table-num">5</span> tables! Book your seat before they are all gone!</h2>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <p style="text-align: right"><a class="btn btn-primary btn-lg" href="/tables"><span class="glyphicon glyphicon-list-alt"></span> View Table</a></p>
+                </div>  
+                <div class="col-md-6">
+                    <p><a class="btn btn-danger btn-lg" href="/reservation"><span class="glyphicon glyphicon-credit-card"></span> Reservation</a></p>
+                </div>
+            </div>
+        </div>
 
-
-	<div class="panel panel-default">
-		<div class="panel-heading"><h3 class="panel-title">Table Reservation</h3></div>
-		<div class="panel-body">
-			<form>
-				<div class="form-group">
-					<label for="name">Name:</label>
-					<input type="text" class="form-control" id="name" placeholder="name">
-				</div>
-				<div class="form-group">
-					<label for="phoneNumber">Phone Number:</label>
-					<input type="number" class="form-control" id="name" placeholder="phoneNumber">
-				</div>
-				<div class="form-group">
-					<label for="email">Email:</label>
-					<input type="email" class="form-control" id="email" placeholder="email">
-				</div>
-				<div class="form-control">
-					<label for="id">Unique Id:</label>
-					<input type="text" class="form-control" id="id" placeholder="id">
-				</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3 class="panel-title">Table Reservation</h3></div>
+			<div class="panel-body">
+				<form>
+					<div class="form-group">
+						<label for="name">Name:</label>
+						<input type="text" class="form-control" id="name" placeholder="name">
+					</div>
+					<div class="form-group">
+						<label for="phoneNumber">Phone Number:</label>
+						<input type="number" class="form-control" id="name" placeholder="phoneNumber">
+					</div>
+					<div class="form-group">
+						<label for="email">Email:</label>
+						<input type="email" class="form-control" id="email" placeholder="email">
+					</div>
+					<div class="form-group">
+						<label for="id">Unique Id:</label>
+						<input type="text" class="form-control" id="id" placeholder="id">
+					</div>
+					<button type="submit" class="btn btn-default">Reserve</button>
+				</form>
+			</div>
 		</div>
+
+		<footer>
+                <div class="container">
+                    <p>
+                        <a href="/api/current">API Current Tables</a>
+                         | 
+                        <a href="/api/waiting">API Waiting Tables</a>
+                    </p>
+                </div>
+            </footer>
+
 	</div>
-
-
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="../routing/..."></script>
-	</body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
 </html>
