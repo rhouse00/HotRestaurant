@@ -15,17 +15,8 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //ROUTES // 
 // =============================================================
-app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, './public/home.html'))
-});
-
-app.get('/reservation', (req, res)=>{
-    res.sendFile(path.join(__dirname, "./public/reservation.html"))
-});
-
-app.get('/tables', (req, res)=>{
-    res.sendFile(path.join(__dirname, "./public/tables.html"))
-});
+require('./app/routing/api-routes')(app);
+require('./app/routing/html-routes')(app);
 
 app.listen(PORT, ()=> {
   console.log(`Server listening on ${PORT}`);
