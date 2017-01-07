@@ -1,13 +1,13 @@
-var path = require("path");
+const path = require("path");
 
 
-module.exports = function(app){
+module.exports = (app)=>{
 
-    app.get("/api/waiting", function(req, res){
+    app.get("/api/waiting", (req, res)=>{
         res.send("waitlist!");
     });
 
-    app.get("/api/current", function(req, res){
+    app.get("/api/current", (req, res)=>{
         res.send("current!");
     });
 

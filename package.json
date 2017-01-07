@@ -1,4 +1,10 @@
 {
+<<<<<<< HEAD
+  "name": "hotrestaraunt",
+  "version": "1.0.0",
+  "description": "Make Reservations and view availability",
+  "main": "index.js",
+=======
   "name": "hotrestuarant",
   "version": "1.0.0",
   "description": "Make Reservations and view availability",
@@ -9,17 +15,31 @@
     "path": "^0.12.7"
   },
   "devDependencies": {},
+>>>>>>> 1b7e0ef795100b5750cd5c04644b645fd15e845c
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
+<<<<<<< HEAD
+    "url": "git+https://github.com/andreyorlov33/HotRestaurant.git"
+=======
     "url": "git+https://github.com/mwhitcom/HotRestaurant.git"
+>>>>>>> 1b7e0ef795100b5750cd5c04644b645fd15e845c
   },
   "author": "",
   "license": "ISC",
   "bugs": {
+<<<<<<< HEAD
+    "url": "https://github.com/andreyorlov33/HotRestaurant/issues"
+  },
+  "homepage": "https://github.com/andreyorlov33/HotRestaurant#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+=======
     "url": "https://github.com/mwhitcom/HotRestaurant/issues"
   },
   "homepage": "https://github.com/mwhitcom/HotRestaurant#readme"
+>>>>>>> 1b7e0ef795100b5750cd5c04644b645fd15e845c
 }
