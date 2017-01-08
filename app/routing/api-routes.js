@@ -5,7 +5,7 @@ var tableQueue = [];
 module.exports = (app)=>{
 
     app.get("/api/waiting", (req, res)=>{
-        res.send("waitlist!");
+        res.send(tableQueue);
     });
 
     app.get("/api/current", (req, res)=>{

@@ -69,7 +69,7 @@
 					this.phone = phone;
 					this.email = email;
 					this.id = id;
-				}
+				};
 
 				event.preventDefault();
 
@@ -87,10 +87,11 @@
 					$("#phone").trigger("reset");
 					return false;
 				}else {
-		        	$.post("http://localhost:3000/api/waiting", new Table(name, phone, email, id))
+					var reservation = new Table(name, phone, email, id);
+		        	$.post("http://localhost:3000/api/waiting", reservation)
 				      .done(function(data) {
 				        console.log(data);
-				        alert("Adding character...");
+				        alert("Adding reservation...");
 				    });
 				}
 
