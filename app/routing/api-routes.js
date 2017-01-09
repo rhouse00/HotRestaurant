@@ -1,11 +1,20 @@
 const path = require("path");
+const waiting = require("../data/waiting");
 
-var tableQueue = [];
+module.exports =(app)=>{
 
-module.exports = (app)=>{
-
-    app.get("/api/waiting", (req, res)=>{
-        res.send(tableQueue);
+    // app.get("/api/waiting", (req, res)=>{
+    //     waiting.forEach((reservation)=>{
+    //         console.log(reservation)
+    //     })
+    //     res.json(waiting);
+    // });
+    app.get("/api/tables", (req, res)=>{
+           console.log('here');
+           waiting.forEach((reservation)=>{
+            console.log(reservation)
+        })
+        res.json(waiting);
     });
 
     app.get("/api/current", (req, res)=>{
@@ -15,10 +24,13 @@ module.exports = (app)=>{
        app.get("/api/clear", (req, res)=>{
         res.send("clearing!");
     });
-    app.post("/api/waiting", (req, res)=>{
-        var newTable = req.body;
-		tableQueue.push(newTable);
-		res.json(newTable);
-    });
+
+     app.post("/api/waiting", (req, res)=> {
+       var reservation = req.body;
+       reservation.routeName = reservation.name.replace(/\s+/g, "").toLowerCase();
+       waiting.push(reservation);
+       res.json(reservation);
+      console.log(waiting);
+});
 
 };
