@@ -5,6 +5,7 @@
         <title>Hot Restaurant</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -25,22 +26,14 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Current Reservations</h3>
                 </div>
-                <div class="panel-body" id="reservations">
-                    <div class="well">
-                        <h2><span class="label label-primary">1</span> | Test</h2>
-                    </div>
-                </div>
+                <div class="panel-body" id="reservations"></div>
             </div>
 
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Waiting List</h3>
                 </div>
-                <div class="panel-body" id="waiting">
-                    <div class="well">
-                        <h2><span class="label label-primary">1</span> | Matt</h2>
-                    </div>
-                </div>
+                <div class="panel-body" id="waiting"></div>
             </div>
 
             <footer>
@@ -59,5 +52,54 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            
+            var test = [{
+                name: "Matt",
+                phone: "2076324410",
+                email: "mwhitcom@gmail.com",
+                id: 5555555
+            },{
+                name: "Andrey",
+                phone: "2076323452",
+                email: "andrey@gmail.com",
+                id: 1111111
+            },{
+                name: "Andrey",
+                phone: "2076323452",
+                email: "andrey@gmail.com",
+                id: 1111111
+            },{
+                name: "Andrey",
+                phone: "2076323452",
+                email: "andrey@gmail.com",
+                id: 1111111
+            },{
+                name: "Andrey",
+                phone: "2076323452",
+                email: "andrey@gmail.com",
+                id: 1111111
+            },{
+                name: "Andrey",
+                phone: "2076323452",
+                email: "andrey@gmail.com",
+                id: 1111111
+            }];
+
+            for (var i = 0; i < test.length; i++) {
+                if (i < 5){
+                    var span = $("<span />").addClass("label label-primary").text(i+1);
+                    var h2 = $("<h2 />").text(" | " + test[i].name).prepend(span);
+                    var div = $("<div />").addClass("well").append(h2);
+                    $("#reservations").append(div);
+                } else {
+                    var span = $("<span />").addClass("label label-primary").text(i-4);
+                    var h2 = $("<h2 />").text(" | " + test[i].name).prepend(span);
+                    var div = $("<div />").addClass("well").append(h2);
+                    $("#waiting").append(div);
+                }
+            }
+
+        </script>
     </body>
 </html>
