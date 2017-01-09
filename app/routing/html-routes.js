@@ -8,8 +8,8 @@ module.exports =(app)=>{
   });
 
   app.get('/reservation', (req, res)=>{
-    res.sendFile(path.join(__dirname, "../public/reservation.html"))
-    // res.sendFile(path.join(__dirname, "../form-control.js"))
+    res.sendFile(path.join(__dirname, "../public/reservation.html"));
+    // res.sendFile(path.join(__dirname, "../form-control.js"));
   });
 
   app.get('/tables', (req, res)=>{
