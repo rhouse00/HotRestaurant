@@ -53,40 +53,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script>
-            
-            var test = [{
-                name: "Matt",
-                phone: "2076324410",
-                email: "mwhitcom@gmail.com",
-                id: 5555555
-            },{
-                name: "Andrey",
-                phone: "2076323452",
-                email: "andrey@gmail.com",
-                id: 1111111
-            },{
-                name: "Andrey",
-                phone: "2076323452",
-                email: "andrey@gmail.com",
-                id: 1111111
-            },{
-                name: "Andrey",
-                phone: "2076323452",
-                email: "andrey@gmail.com",
-                id: 1111111
-            },{
-                name: "Andrey",
-                phone: "2076323452",
-                email: "andrey@gmail.com",
-                id: 1111111
-            },{
-                name: "Andrey",
-                phone: "2076323452",
-                email: "andrey@gmail.com",
-                id: 1111111
-            }];
-
-            for (var i = 0; i < test.length; i++) {
+               var test = [];
+            $.get("http://localhost:3000/api/tables", (data)=>{
+             
+                  data.forEach((reservation)=>{
+                 test.push(reservation);
+                 console.log(test)
+               })
+            }).then(()=>{
+                 for (var i = 0; i < test.length; i++) {
                 if (i < 5){
                     var span = $("<span />").addClass("label label-primary").text(i+1);
                     var h2 = $("<h2 />").text(" | " + test[i].name).prepend(span);
@@ -99,6 +74,11 @@
                     $("#waiting").append(div);
                 }
             }
+            })
+            
+         
+
+           
 
         </script>
     </body>

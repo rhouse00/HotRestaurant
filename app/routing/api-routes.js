@@ -3,16 +3,11 @@ const waiting = require("../data/waiting");
 
 module.exports =(app)=>{
 
-    // app.get("/api/waiting", (req, res)=>{
-    //     waiting.forEach((reservation)=>{
-    //         console.log(reservation)
-    //     })
-    //     res.json(waiting);
-    // });
+
     app.get("/api/tables", (req, res)=>{
-           console.log('here');
+     
            waiting.forEach((reservation)=>{
-            console.log(reservation)
+            // console.log(reservation)
         })
         res.json(waiting);
     });
@@ -30,7 +25,7 @@ module.exports =(app)=>{
        reservation.routeName = reservation.name.replace(/\s+/g, "").toLowerCase();
        waiting.push(reservation);
        res.json(reservation);
-      console.log(waiting);
+     
 });
 
 };
