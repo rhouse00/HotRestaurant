@@ -26,6 +26,7 @@ module.exports =(app)=>{
        reservation.routeName = reservation.name.replace(/\s+/g, "").toLowerCase();
        waiting.push(reservation);
        res.json(reservation);
+
      
 });
 
